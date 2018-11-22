@@ -1,0 +1,1 @@
+<x-classic cid="{{cid}}" type="{{type}}" />

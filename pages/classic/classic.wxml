@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="header">
+    <x-epsoide class="epsoide" index="{{classic.index}}" />
+    <view class="like-container">
+      <x-like class="like" bind:like="onLike" like="{{likeStatus}}" count="{{likeCount}}" />
+      <x-button class="share-btn" open-type="share">
+        <image class="share" slot="img" src="/images/icon/share.png" />
+      </x-button>
+    </view>
+  </view>
+  <x-movie hidden="{{classic.type!==100}}" img="{{classic.image}}" content="{{classic.content}}" />
+  <x-music wx:if="{{classic.type==200}}" img="{{classic.image}}" content="{{classic.content}}" src="{{classic.url}}" />
+  <x-essay hidden="{{classic.type!==300}}" img="{{classic.image}}" content="{{classic.content}}" />
+  <x-navi class="navi" title="{{classic.title}}" bind:left="onNext" bind:right="onPrev" first="{{first}}" latest="{{latest}}" />
+</view>
